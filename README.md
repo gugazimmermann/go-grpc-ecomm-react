@@ -34,9 +34,9 @@ create `.prettierrc.js`
 module.exports = {
   printWidth: 120,
   semi: true,
-  trailingComma: "es5",
-  singleQuote: true,
-  jsxSingleQuote: true,
+  trailingComma: "all",
+  singleQuote: false,
+  jsxSingleQuote: false,
   useTabs: false,
   tabWidth: 2,
 };
