@@ -1,5 +1,7 @@
 # Go gRPC Ecommerce - React
 
+## Configure the project
+
 `npx create-react-app go-grpc-ecomm-react --template typescript && cd go-grpc-ecomm-react`
 
 `git init`
@@ -62,3 +64,11 @@ in `package.json`
     }
   },
 ```
+
+# Store Sample Data
+
+`public/imgs` -> All the products images
+
+`src/interfaces/index.ts` -> The Products and Categories typescript interfaces
+
+`src/utils/sample-data.ts` -> The Products and Categories sample data
