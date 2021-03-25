@@ -54,7 +54,7 @@ in `package.json`
     "prettier": "prettier --write \"./**/*.{js,jsx,json,md}\""
   },
   "lint-staged": {
-    "*.js": "eslint"
+    "*.{js,jsx,json}": "eslint"
   },
   "husky": {
     "hooks": {
