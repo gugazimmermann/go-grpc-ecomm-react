@@ -72,3 +72,33 @@ in `package.json`
 `src/interfaces/index.ts` -> The Products and Categories typescript interfaces
 
 `src/utils/sample-data.ts` -> The Products and Categories sample data
+
+# Store Layout
+
+`npm install react-bootstrap bootstrap`
+
+Add Bootstrap CSS
+`public/index.html`
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+  crossorigin="anonymous"
+/>
+```
+
+`src/App.scss`
+
+```css
+@import "~bootstrap/scss/bootstrap";
+```
+
+`npm install node-sass`
+
+`npm install react-router-dom && npm install --save-dev @types/react-router-dom`
+
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

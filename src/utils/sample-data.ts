@@ -4,7 +4,7 @@ export const sampleCategoryData: Category[] = [
   { id: 1, name: "Books", parent: 0 },
   { id: 2, name: "Accessories", parent: 0 },
   { id: 3, name: "AD&D", parent: 1 },
-  { id: 4, name: "WoD", parent: 1 },
+  { id: 4, name: "World of Darkness", parent: 1 },
   { id: 5, name: "GURPS", parent: 1 },
   { id: 6, name: "Core", parent: 3 },
   { id: 7, name: "Dragonlance", parent: 3 },

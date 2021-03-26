@@ -1,0 +1,76 @@
+@import "../_colors.scss";
+
+.logo {
+  fill: $secondary-color;
+  max-width: 1.5em;
+  height: auto;
+}
+
+// .navMain {
+//   width: 100%;
+//   height: 2.8em;
+//   background-color: $primary-color;
+
+//   ul.navMenu {
+//     padding: 0;
+//     margin: 0;
+//     list-style: none;
+//     position: relative;
+//   }
+
+//   ul.navMenu ul {
+//     position: absolute;
+//     left: 0;
+//     top: 100%;
+//     display: none;
+//     padding: 0;
+//     margin: 0;
+//     background-color: $primary-color;
+//   }
+
+//   ul.navMenu li {
+//     display: inline;
+//     float: left;
+//     position: relative;
+//   }
+
+//   ul.navMenu a {
+//     text-decoration: none;
+//     padding: 0.8em;
+//     width: 8em;
+//     color: $background-color;
+//     float: left;
+//     text-align: center;
+//   }
+
+//   ul.navMenu a:hover {
+//     background: $secondary-color;
+//     color: $text-color;
+//   }
+
+//   ul.navMenu li:hover ul {
+//     display: block;
+//   }
+
+//   ul.navMenu ul a {
+//     width: 150px;
+//   }
+
+//   ul.navMenu ul li {
+//     display: block;
+//     margin: 0px;
+//   }
+
+//   ul.navMenu ul ul {
+//     top: 0;
+//     left: 100%;
+//   }
+
+//   ul.navMenu li:hover ul ul {
+//     display: none;
+//   }
+
+//   ul.navMenu ul li:hover ul {
+//     display: block;
+//   }
+// }
