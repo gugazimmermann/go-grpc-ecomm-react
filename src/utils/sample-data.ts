@@ -1,6 +1,6 @@
-import { Category, Product } from "../interfaces";
+import { ISampleCategory, IProduct } from "../interfaces";
 
-export const sampleCategoryData: Category[] = [
+export const sampleCategoryData: ISampleCategory[] = [
   { id: 1, name: "Books", parent: 0 },
   { id: 2, name: "Accessories", parent: 0 },
   { id: 3, name: "AD&D", parent: 1 },
@@ -14,7 +14,7 @@ export const sampleCategoryData: Category[] = [
   { id: 11, name: "Werewolf", parent: 4 },
 ];
 
-export const sampleProductData: Product[] = [
+export const sampleProductData: IProduct[] = [
   { id: 1, name: "Dices Pack", quantity: 50, value: 5.2, category: 2 },
   { id: 2, name: "d10 Dice", quantity: 47, value: 5.2, category: 2 },
   { id: 3, name: "Special d10 Dice Pack", quantity: 15, value: 10.5, category: 2 },
