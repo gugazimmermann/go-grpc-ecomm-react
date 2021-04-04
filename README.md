@@ -1,4 +1,12 @@
-# Go gRPC Ecommerce - React
+# Go gRPC Ecommerce - Pt 1 - React
+
+![cover](imgs/cover.png)
+
+In this 3 articles series I will show you how to use gRPC to create an ecommerce with frontend in React and Backend in GO.
+
+We will use React, Typescript, Keycloak, gRPC, Protocol Buffer, Docker Compose, MongoDB e Go!
+
+# Part 1 - Frontend
 
 Site running\*: http://go-grpc-ecomm-react.s3-website-us-east-1.amazonaws.com/
 
@@ -191,7 +199,7 @@ When the user is logged in, it shows the user's information and allows him to lo
 
 `docker-compose.yml`
 
-To handle user authentication we will use Red Hat's Keycloak. To use it you need to have the docker and docker composer installed (in my previous articles I show you how to install). To start you only need to run: `docker-compose up` and then open it in the browser
+To handle user authentication we will use Red Hat's Keycloak. To use it you need to have the docker and docker compose installed (in my previous articles I show you how to install). To start you only need to run: `docker-compose up` and then open it in the browser
 
 http://localhost:8080/auth/admin
 user: admin
