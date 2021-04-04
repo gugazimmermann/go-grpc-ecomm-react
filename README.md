@@ -193,6 +193,8 @@ Allows the user to define how many products to see at a time.
 
 Shows the image, title and value of the product to the user, also allows the user to add the product to the cart.
 
+![productcard](imgs/productcard.png)
+
 - `src/components/pagination.tsx`
 
 To not to show a very long list of products we will use pagination, this file create a list of page numbers for the user be able to browse the product list.
