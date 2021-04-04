@@ -12,7 +12,7 @@ Site running\*: http://go-grpc-ecomm-react.s3-website-us-east-1.amazonaws.com/
 
 - without Red Hat's Keycloak
 
-In this article I will not go step by step creating each file, but I will try to comment on each file to make it simple to understand. The goal is to have only the starting point for the next articles, which will use this website with a backend in Go with gRPC.
+In this article I will not go step by step creating each file, but I will try to comment on each file to make it simple to understand. The goal is to have only the starting point for the next articles, which will use this website as frontend with a backend in Go with gRPC. In the third article we will go back to this site and make the integration.
 
 Run the commands below to download the code and run the site. See the `keycloak` section below to configure and run the Red Hat's Keycloak using the docker and be able to checkout.
 
@@ -35,6 +35,8 @@ These two will help to keep the code formated and help to avoid errors.
 `.prettierrc.js`: the Prettier config.
 
 `package.json`: We will chage to be able to run `npm run lint` and `npm run prettier`, and also make husky run lint and prettier everytime we do a `git commit`, this way we can guarantee that the code will be pushed in the right format.
+
+![husky](imgs/husky.png)
 
 ## Store Sample Data
 
@@ -133,6 +135,8 @@ To use the state on the entire site we will put the provider in `src/App.tsx`, j
 
 Very simple page, it only shows an alert when the user tries to use a Route that does not exist.
 
+![notfound](imgs/notfound.png)
+
 - `src/pages/category.tsx`
 
 This page is practically the whole site, we will practically use just this page, so each time it is called we will reset the information.
@@ -145,9 +149,13 @@ If we were in a category, we should check the subcategories and creating a sidem
 
 We will also show the products, and to not get a long list we will add a pagination and the user can choose how many products he wants to see.
 
+![category](imgs/category.png)
+
 - `src/pages/cart.tsx`
 
 This page will show the products that the user has added to the cart and allow it to change the quantity or remove it from the cart. Will also show if the user is logged with the Keycloak or not, and allow them to login / logout and checkout.
+
+![cart](imgs/cart.png)
 
 ## Components
 
@@ -155,21 +163,31 @@ This page will show the products that the user has added to the cart and allow i
 
 The Menu navigation by categories. We will receive from the server the main categories (which do not have a parent) and for each their direct subcategories (only 1 level), and then set up the list and dropdowns.
 
+![menu-nav](imgs/menu-nav.png)
+
 - `src/components/menu-cart.tsx`
 
 The button for the shopping cart. We will use the state to show a badge with the quantity of products added to the cart, and we will also show a Toast whenever a product is added, updated or removed from the cart.
+
+![menu-cart](imgs/menu-cart.png)
 
 - `src/components/breadcrumb.tsx`
 
 It will show a title if we are on the homepage, or the search term and the number of results, or the category and the parents categories.
 
+![breadcrumb](imgs/breadcrumb.png)
+
 - `src/components/side-menu.tsx`
 
 If you are viewing a category it will show the subcategories.
 
+![sidemenu](imgs/sidemenu.png)
+
 - `src/components/qty-per-page.tsx`
 
 Allows the user to define how many products to see at a time.
+
+![qtyperpage](imgs/qtyperpage.png)
 
 - `src/components/product-card.tsx`
 
@@ -179,23 +197,35 @@ Shows the image, title and value of the product to the user, also allows the use
 
 To not to show a very long list of products we will use pagination, this file create a list of page numbers for the user be able to browse the product list.
 
+![pagination](imgs/pagination.png)
+
 - `src/components/cart-list.tsx`
 
 Shows the list of products in the cart and the total purchase price.
+
+![cartlist](imgs/cartlist.png)
 
 - `src/components/cart-item.tsx`
 
 Shows the product in the cart list and allows the user to change the quantity or remove it from the list.
 
+![cartitem](imgs/cartitem.png)
+
 - `src/components/login-form.tsx`
 
 Allows the user to login using the Red Hat's Keycloak.
+
+![loginform](imgs/loginform.png)
 
 - `src/components/logged-in.tsx`
 
 When the user is logged in, it shows the user's information and allows him to logout or checkout the products in the cart.
 
+![loggedin](imgs/loggedin.png)
+
 # Red Hat's Keycloak
+
+![dockercompose](imgs/dockercompose.png)
 
 `docker-compose.yml`
 
@@ -205,6 +235,8 @@ http://localhost:8080/auth/admin
 user: admin
 pass: admin
 
+![keycloak](imgs/keycloak.png)
+
 Pass the mouse over `Master` and add a realm `go-grpc-ecomm-react`. Create a user, set `User Enabled` and `Email Verified` than go to the user `Credentials` and set a password and change temporary to off.
 
 Open http://localhost:8080/auth/realms/go-grpc-ecomm-react/account and click sign-in to test the new user. After login go back to admin console and go to sessions, you will see `account-console` with 1 active session. Click `account-console` and show sessions to see the user.
@@ -212,6 +244,8 @@ Open http://localhost:8080/auth/realms/go-grpc-ecomm-react/account and click sig
 Click on `Clients` -> `create` and create a client with id `react`, change `Access Type` to `confidential`, set `Standard Flow Enabled` to off, `Direct Access Grants Enabled` to on. Save and go to `Credentials` to see the Secret (change the value of `REACT_APP_KEYCLOAK_CLIENT_SECRET` in `.env` to this secret). Now set `Access Type` back to `public` (you will not see the `Credentials` tab anymore) and add `http://localhost:3000` in `Web Origins`. This will handle CORS problems.
 
 Try to run `http://localhost:8080/auth/realms/go-grpc-ecomm-react/.well-known/openid-configuration` to see if everything is ok. It will open a JSON with many endpoints, we will use the `token_endpoint` now.
+
+![postman](imgs/postman.png)
 
 You can try to login using POSTMAN (https://www.postman.com). Send a POST to `http://localhost:8080/auth/realms/go-grpc-ecomm-react/protocol/openid-connect/token` In Body select `x-www-form-urlencoded` and
 
