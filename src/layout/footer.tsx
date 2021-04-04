@@ -1,19 +1,27 @@
 import React, { ReactElement } from "react";
-import "./layout.scss";
+import { Row, Col } from "react-bootstrap";
 
 const Footer = (): ReactElement => {
   return (
-    <footer className="footer">
-      <p>
-        Icons made by{" "}
-        <a href="https://www.freepik.com" title="Freepik">
-          Freepik
-        </a>{" "}
-        from{" "}
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </a>
-      </p>
+    <footer className="footer bg-primary">
+      <Row>
+        <Col>
+          <p>
+            {process.env.REACT_APP_STORE_TITLE} by{" "}
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/guga-zimmermann/">
+              Guga Zimmermann
+            </a>
+          </p>
+        </Col>
+        <Col className="text-right">
+          <p>
+            Icons made from{" "}
+            <a target="_blank" rel="noreferrer" href="https://www.flaticon.com/" title="Flaticon">
+              www.flaticon.com
+            </a>
+          </p>
+        </Col>
+      </Row>
     </footer>
   );
 };

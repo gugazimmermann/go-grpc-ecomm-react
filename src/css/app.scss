@@ -3,7 +3,7 @@
 $theme-colors: (
   "primary": $primary-color,
   "secondary": $secondary-color,
-  "danger": #ff4136,
+  "danger": $danger-color,
 );
 
 @import "~bootstrap/scss/bootstrap";

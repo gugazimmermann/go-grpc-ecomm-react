@@ -23,3 +23,20 @@ export type IProductsResult = {
   total: number;
   data: IProduct[];
 };
+
+export type IProductCard = {
+  product: IProduct;
+  quantity: number;
+};
+
+export type IToast = {
+  product: IProduct;
+  type: string;
+};
+
+export type IUser = {
+  email: string;
+  name: string;
+  token: string;
+  refreshToken: string;
+};
