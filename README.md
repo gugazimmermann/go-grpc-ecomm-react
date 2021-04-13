@@ -8,6 +8,8 @@ We will use React, Typescript, Keycloak, gRPC, Protocol Buffer, Docker Compose, 
 
 # Part 1 - Frontend
 
+Article: https://www.linkedin.com/pulse/go-grpc-ecommerce-pt-1-react-jos%C3%A9-augusto-zimmermann-negreiros/
+
 Site running\*: http://go-grpc-ecomm-react.s3-website-us-east-1.amazonaws.com/
 
 - without Red Hat's Keycloak
